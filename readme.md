@@ -1,5 +1,7 @@
 # Validator
 
+[![Build Status](https://travis-ci.org/Su9Tail/Validator.svg?branch=master)](https://travis-ci.org/Su9Tail/Validator)
+
 Validator is designed for Laravel when use ajax. Validator is a simple encapsulation of Illuminate\Contracts\Validation\Factory in Laravel, which excepted validating data easier.
 
 ## Install
