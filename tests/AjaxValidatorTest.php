@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class AjaxValidatorTest extends TestCase
 {
-    private $validator;
+    protected $validator;
 
     public function setUp()
     {
@@ -20,10 +20,9 @@ class AjaxValidatorTest extends TestCase
     public function testValidateStore()
     {
         $values = [
-            'username'=>'1',
-            'password'=>'1'
+            'username' => '1',
+            'password' => '1'
         ];
-        $this->assertTrue(true);
-//        $this->validator->validate($values,'user')->seeJson(['status'=>'failed']);
+        $this->validator->validate($values, 'user')->seeJson(['status' => 'failed']);
     }
 }

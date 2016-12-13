@@ -18,7 +18,7 @@ Cals\Validator\ValidatorServiceProvider::class
 
 ## Configuration
 
-You can publish the config using this command:
+You have to publish the config using this command:
 
 ```Bash
 php artisan vendor:publish --provider="Cals\Validator\ValidatorServiceProvider"
@@ -32,7 +32,7 @@ Validator provides a simple way to validate data, you can simply use it anywhere
 
 `validate(array $values = [], $resource, $method = 'store')`
 
-`$resource` is one of your key in `rules` which contained in `validator.php` and `$method` can be `'update'` except default value `store`.
+`$resource` is one of your key in `rules` which contained in `validator.php` and `$method` can be `'update'` except default value `'store'`.
 
 When validate failed, Validator will send a json response automatically.The returned data is like this.
 
