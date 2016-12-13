@@ -18,9 +18,9 @@ class AjaxValidator
         $extraRules = config('validator.rules.whenUpdate.' . $resource);
         $messages = config('validator.messages');
         $attributes = array_keys($values);
-        if($method === 'update'){
+        if ($method === 'update') {
             $allRules = array();
-            array_merge($allRules,$rules,$extraRules);
+            array_merge($allRules, $rules, $extraRules);
             $attributes = array_keys($allRules);
         }
         $validator = Validator::make($values, $rules, $messages, $attributes);
