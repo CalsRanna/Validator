@@ -1,6 +1,13 @@
 # Validator
 
 [![Build Status](https://travis-ci.org/Su9Tail/Validator.svg?branch=master)](https://travis-ci.org/Su9Tail/Validator)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Su9Tail/Validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Su9Tail/Validator/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Su9Tail/Validator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Su9Tail/Validator/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Su9Tail/Validator/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Su9Tail/Validator/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/cals/validator/v/stable)](https://packagist.org/packages/cals/validator)
+[![Total Downloads](https://poser.pugx.org/cals/validator/downloads)](https://packagist.org/packages/cals/validator)
+[![Latest Unstable Version](https://poser.pugx.org/cals/validator/v/unstable)](https://packagist.org/packages/cals/validator)
+[![License](https://poser.pugx.org/cals/validator/license)](https://packagist.org/packages/cals/validator)
 
 Validator is designed for Laravel when use ajax. Validator is a simple encapsulation of Illuminate\Contracts\Validation\Factory in Laravel, which excepted validating data easier.
 
