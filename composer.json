@@ -1,0 +1,18 @@
+{
+    "name": "cals/validator",
+    "description": "A simple encapsulation of Illuminate\\Contracts\\Validation\\Factory in Laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cals",
+            "email": "iloveyou62948@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Cals\\Validator\\": "src/"
+        }
+    }
+}
