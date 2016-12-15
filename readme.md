@@ -39,9 +39,9 @@ You should put your rules and messages in it.
 
 Validator provides a simple way to validate data, you can simply use it anywhere you want.
 
-`validate(array $values = [], $resource, $sometimes = false)`
+`validate(array $values = [], $resource, array $messages = [], $sometimes = false)`
 
-`$resource` is one of your key in `rules` which contained in `validator.php`. When `$sometimes` was `true`, rules in sometimes would be used.
+`$values` is the data you wish to validate, `$resource` is one of your key in `rules` which contained in `validator.php`. And you can set messages while validating fails to return by using `$message`.When `$sometimes` was `true`, rules in sometimes would be used.
 
 When validate failed, Validator will send a json response automatically.The returned data is like this.
 
@@ -51,11 +51,11 @@ When validate failed, Validator will send a json response automatically.The retu
     "code": 422,
     "message": {
         "username": [
-            "username不能为空"
+            "用户名不能为空"
         ],
         "password": [
-            "password不能是字母、数字、破折号和下划线之外的其他字符",
-            "password必须在 6 和 18 之间"
+            "密码不能是字母、数字、破折号和下划线之外的其他字符",
+            "密码必须在 6 到 18 位之间"
         ]
     }
 }
@@ -92,4 +92,4 @@ class TController extends Controller
 
 ## License
 
-Released under the MIT License.
+The Validator is open-sourced library licensed under the [MIT license](http://opensource.org/licenses/MIT).

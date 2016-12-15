@@ -19,10 +19,6 @@ class AjaxValidatorTest extends TestCase
 
     public function testValidateStore()
     {
-        $values = [
-            'username' => '1',
-            'password' => '1'
-        ];
         $this->assertTrue(true);
     }
 }
