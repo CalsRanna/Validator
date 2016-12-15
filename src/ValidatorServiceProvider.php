@@ -25,7 +25,7 @@ class ValidatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Cals\Validator\AjaxValidator', function ($app) {
+        $this->app->singleton('Cals\Validator\AjaxValidator', function () {
             return new AjaxValidator();
         });
     }

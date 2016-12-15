@@ -33,15 +33,15 @@ You have to publish the config using this command:
 php artisan vendor:publish --provider="Cals\Validator\ValidatorServiceProvider"
 ```
 
-You can put your rules and messages in it.
+You should put your rules and messages in it.
 
 ## Usage
 
 Validator provides a simple way to validate data, you can simply use it anywhere you want.
 
-`validate(array $values = [], $resource, $method = 'store')`
+`validate(array $values = [], $resource, $sometimes = false)`
 
-`$resource` is one of your key in `rules` which contained in `validator.php` and `$method` can be `'update'` except default value `'store'`.
+`$resource` is one of your key in `rules` which contained in `validator.php`. When `$sometimes` was `true`, rules in sometimes would be used.
 
 When validate failed, Validator will send a json response automatically.The returned data is like this.
 
