@@ -15,7 +15,7 @@ class AjaxValidator
     public function validate(array $values = [], $resource, $sometimes = false)
     {
         $rules = $this->rules($resource);
-        $messages = $this->messages($resource);
+        $messages = $this->messages();
         $attributes = $this->attributes($resource);
         $validator = Validator::make($values, $rules, $messages, $attributes);
         if ($sometimes) {
@@ -34,9 +34,9 @@ class AjaxValidator
         return config('validator.rules.' . $index);
     }
 
-    private function messages($index)
+    private function messages()
     {
-        return config('validator.messages.' . $index);
+        return config('validator.messages');
     }
 
     private function attributes($index)
