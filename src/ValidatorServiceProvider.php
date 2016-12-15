@@ -14,7 +14,7 @@ class ValidatorServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/validator.php' => config_path('validator.php')
+            __DIR__ . '/config/validator.php' => config_path('validator.php')
         ]);
     }
 
@@ -25,6 +25,9 @@ class ValidatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/default.php', 'validator'
+        );
         $this->app->singleton('Cals\Validator\AjaxValidator', function () {
             return new AjaxValidator();
         });

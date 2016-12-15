@@ -14,15 +14,33 @@ class AjaxValidator
 {
     public function validate(array $values = [], $resource, $sometimes = false)
     {
-        $rules = config('validator.rules.' . $resource);
-        $extraRules = config('validator.rules.whenUpdate.' . $resource);
-        $messages = config('validator.messages');
-        $validator = Validator::make($values, $rules, $messages);
-        $validator->sometimes(array_keys($extraRules), $extraRules, function ($sometimes) use ($sometimes) {
-            return $sometimes;
-        });
+        $rules = $this->rules($resource);
+        $messages = $this->messages($resource);
+        $attributes = $this->attributes($resource);
+        $validator = Validator::make($values, $rules, $messages, $attributes);
+        if ($sometimes) {
+            $extraRules = $this->rules('sometimes' . $resource);
+            $validator->sometimes(array_keys($extraRules), $extraRules, function ($execution) use ($sometimes) {
+                return $execution;
+            });
+        }
         if ($validator->fails()) {
             response()->json(['status' => 'failed', 'code' => 422, 'message' => $validator->errors()])->send();
         }
+    }
+
+    private function rules($index)
+    {
+        return config('validator.rules.' . $index);
+    }
+
+    private function messages($index)
+    {
+        return config('validator.messages.' . $index);
+    }
+
+    private function attributes($index)
+    {
+        return config('validator.attributes.' . $index);
     }
 }
