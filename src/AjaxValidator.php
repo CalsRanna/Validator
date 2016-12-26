@@ -9,6 +9,7 @@
 namespace Cals\Validator;
 
 use Validator;
+use Illuminate\Http\JsonResponse;
 
 class AjaxValidator
 {
@@ -25,7 +26,11 @@ class AjaxValidator
             });
         }
         if ($validator->fails()) {
-            response()->json(['status' => 'failed', 'code' => 422, 'message' => $validator->errors()])->send();
+            (new JsonResponse())
+                ->header('Access-Control-Allow-Origin','*')
+                ->header('Access-Control-Allow-Methods','*')
+                ->setData(['status' => 'failed', 'code' => 422, 'message' => $validator->errors()])
+                ->send();
             exit(0);
         }
     }
