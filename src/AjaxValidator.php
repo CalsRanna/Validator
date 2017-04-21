@@ -26,10 +26,10 @@ class AjaxValidator
             });
         }
         if ($validator->fails()) {
-            (new JsonResponse())
+            (new JsonResponse(null,422))
                 ->header('Access-Control-Allow-Origin','*')
                 ->header('Access-Control-Allow-Methods','*')
-                ->setData(['status' => 'failed', 'code' => 422, 'message' => $validator->errors()])
+                ->setData(['message' => $validator->errors()])
                 ->send();
             exit(0);
         }

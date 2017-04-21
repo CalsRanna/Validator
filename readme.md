@@ -30,7 +30,7 @@ Cals\Validator\ValidatorServiceProvider::class
 You have to publish the config using this command:
 
 ```Bash
-php artisan vendor:publish --provider="Cals\Validator\ValidatorServiceProvider"
+php artisan vendor:publish --tag="validator"
 ```
 
 You should put your rules and messages in it.
@@ -47,8 +47,6 @@ When validate failed, Validator will send a json response automatically.The retu
 
 ```JSON
 {
-    "status": "failed",
-    "code": 422,
     "message": {
         "username": [
             "用户名不能为空"
@@ -73,7 +71,7 @@ namespace App\Http\Controllers;
 use Cals\Validator\AjaxValidator;
 use Illuminate\Http\Request;
 
-class TController extends Controller
+class ExampleController extends Controller
 {
     private $validator;
     public function __construct(AjaxValidator $validator)

@@ -15,7 +15,7 @@ class ValidatorServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/config/validator.php' => config_path('validator.php')
-        ]);
+        ],'validator');
     }
 
     /**
