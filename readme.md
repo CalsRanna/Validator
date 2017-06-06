@@ -47,7 +47,7 @@ When validate failed, Validator will send a json response automatically.The retu
 
 ```JSON
 {
-    "message": {
+    "errors": {
         "username": [
             "用户名不能为空"
         ],
@@ -74,6 +74,7 @@ use Illuminate\Http\Request;
 class ExampleController extends Controller
 {
     private $validator;
+    
     public function __construct(AjaxValidator $validator)
     {
         $this->validator = $validator;

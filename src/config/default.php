@@ -17,7 +17,7 @@ return [
         'array' => ':attribute必须是数组',
         'between' => ':attribute必须在 :min 到 :max 位之间',
         'date' => ':attribute必须是一个有效日期',
-        'digits' => ':attribute必须是 :digits 位的数字',
+        'digits' => ':attribute必须是 :value 位的数字',
         'digits_between' => ':attribute必须是 :min 到 :max 位的数字',
         'email' => ':attribute必须是合法的电子邮件地址',
         'exists' => ':table 表中不存在 :column 为 :attribute的记录',
@@ -29,7 +29,7 @@ return [
         'numeric' => ':attribute必须是数值',
         'regex' => 'attribute不符合规则',
         'required' => ':attribute不能为空',
-        'size' => ':attribute必须是 :size 位',
+        'size' => ':attribute必须是 :value 位',
         'string' => ':attribute必须是字符串'
     ]
 ];
