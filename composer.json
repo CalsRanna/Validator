@@ -18,5 +18,12 @@
         "psr-4": {
             "Cals\\Validator\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cals\\Validator\\ValidatorServiceProvider"
+            ]
+        }
     }
 }

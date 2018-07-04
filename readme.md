@@ -25,6 +25,9 @@ And then add the `Cals\Validator\ValidatorServiceProvider::class` to your `confi
 Cals\Validator\ValidatorServiceProvider::class
 ```
 
+> If you use Laravel 5.5 and after, you don't need do it cause laravel will auto load the provider.
+
+
 ## Configuration
 
 You have to publish the config using this command:
